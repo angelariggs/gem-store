@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html ng-app='store'>
+<html ng-app='gemStore'>
 <!-- ng-app is a directive that tells HTML to run the 'store' module when the page loads  -->
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<title>Unicorn Gem Store</title>
 </head>
-<body>
+<!-- 	Directive / Controller Name / keyword 'as' / Alias 'store' -->
+<body  ng-controller='StoreController as store'>
+<!-- Instead of creating divs for each product in the array (i.e. store.product[0].name), use directive 'ng-repeat' to iterate through the array. Don't forget to take off the leading 'store' n the template dot notation below -->
+	<div ng-hide='store.product.soldOut' ng-repeat='product in store.products'>
+		<h1>{{product.name}}</h1>
+		<h2>${{product.price}}</h2>
+		<p>{{product.description}}</p>
+		<!-- ng-show will only show the elem. (canPurchase) if the value of the expression is true -->
+		<button ng-show='product.canPurchase'>Add to Cart</button>
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script type="text/javascript" src='app.js'></script>
-
-	<p>{{"Hello" + " you!"}}</p>
 </body>
 </html>
