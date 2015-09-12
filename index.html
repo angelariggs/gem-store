@@ -13,10 +13,17 @@
 		<h2 class='pull-right'>{{product.price | currency}}</h2>
 		<section ng-init='tab=1'>
 			<ul class='nav nav-pills'>
-			<!-- ng-click changes the value of tab. 2-way data binding: the expressions are re-evaluated when the property changes. -->
-				<li><a href ng-click='tab=1'>Description</a></li>
-				<li><a href ng-click='tab=2'>Specifications</a></li>
-				<li><a href ng-click='tab=3'>Reviews</a></li>
+				<!-- 'ng-class' adds a class if the expression evaluates to true. In this case, the class to be added is 'active', if the expression 'tab===1' is true. -->
+				<li ng-class='{active:tab===1}'>
+					<!-- ng-click changes the value of tab. 2-way data binding: the expressions are re-evaluated when the property changes. The active class refers to default Bootstrap styling properties.-->
+					<a href ng-click='tab=1'>Description</a>
+				</li>
+				<li ng-class='{active:tab===2}'>
+					<a href ng-click='tab=2'>Specifications</a>
+				</li>
+				<li ng-class='{active:tab===3}'>
+					<a href ng-click='tab=3'>Reviews</a>
+				</li>
 			</ul>
 		</section>
 		<div class='panel' ng-show='tab===1'>
