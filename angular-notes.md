@@ -53,3 +53,7 @@
 - orderBy: sort items
 	- ex: {{ng-repeat='product in store.products | orderBy:"-price"'}} sorts descending order. Without the '-', it would sort in ascending order.
 
+	---
+
+	Initialization and config should go inside the controllers.
+

@@ -30,4 +30,23 @@
 			soldOut: false
 		}
 	];
+
+	app.controller('PanelController', function(){
+		// this takes the place of "ng-init='tab=1'" in the HTML
+		this.tab = 1;
+
+		// this takes the place of the ng-click in HTML
+		this.selectTab = function(setTab){
+			this.tab = setTab;
+		};
+
+		this.isSelected = function(checkTab){
+			return this.tab === checkTab;
+		};
+	})();
 })();
+
+
+
+
+
