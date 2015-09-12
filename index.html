@@ -10,8 +10,28 @@
 <!-- Instead of creating divs for each product in the array (i.e. store.product[0].name), use directive 'ng-repeat' to iterate through the array. Don't forget to take off the leading 'store' n the template dot notation below -->
 	<div ng-hide='store.product.soldOut' ng-repeat='product in store.products'>
 		<h1>{{product.name}}</h1>
-		<h2>${{product.price}}</h2>
-		<p>{{product.description}}</p>
+		<h2 class='pull-right'>{{product.price | currency}}</h2>
+		<section>
+			<ul class='nav nav-pills'>
+			<!-- ng-click changes the value of tab. 2-way data binding: the expressions are re-evaluated when the property changes. -->
+				<li><a href ng-click='tab=1'>Description</a></li>
+				<li><a href ng-click='tab=2'>Specifications</a></li>
+				<li><a href ng-click='tab=3'>Reviews</a></li>
+			</ul>
+			{{tab}}
+		</section>
+		<div class='panel' ng-show='tab===1'>
+			<h4>Desc</h4>
+			<p>{{product.description}}</p>
+		</div>
+		<div class='panel' ng-show='tab===2'>
+			<h4>Specs</h4>
+			<blockquote>None yet</blockquote>
+		</div>
+		<div class='panel' ng-show='tab===3'>
+			<h4>Revs</h4>
+			<blockquote>None yet</blockquote>
+		</div>
 		<!-- ng-show will only show the elem. (canPurchase) if the value of the expression is true -->
 		<button ng-show='product.canPurchase'>Add to Cart</button>
 	</div>

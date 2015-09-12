@@ -10,7 +10,7 @@
 	var gems = [
 		{
 			name:'Azurite',
-			price: 2.95,
+			price: 2,
 			description: 'Aborably wrinkled pit pup faces',
 			canPurchase: true,
 			soldOut: false
