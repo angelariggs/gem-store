@@ -15,6 +15,14 @@
 ##Modules:
 - Where the application components live
 
+## Custom Directives:
+### Template-expanding directive is the simplest kind
+- they define a custom tag or attribute that is expanded or replaced
+- can include Controller logic, if needed
+- Can also express complex UI
+- Call events and register event handlers
+- Reuse common components
+
 ---
 #Directives
 
@@ -44,6 +52,9 @@
 
 ##ng-model
 - binds the form elements value to the property
+
+##ng-submit
+- allows us to call a func when a form is submitted
 
 ---
 

@@ -43,33 +43,35 @@
 					<br />
 					<cite>by: {{review.author}}</cite>
 				</blockquote>
-				<form name='reviewForm'>
-				<blockquote>
-					<br />
-					<b>Stars: {{review.stars}}</b>
-					<br />
-					{{review.body}}
-					<br />
-					<cite>by: {{review.author}}</cite>
-				</blockquote>
-				<h4>- Add a Review -</h4>
-					<select ng-model='review.stars'>
-						<option value='1'>1 star</option>
-						<option value='2'>2 stars</option>
-						<option value='3'>3 stars</option>
-						<option value='4'>4 stars</option>
-						<option value='5'>5 stars</option>
-					</select>
-					<br />
-					<br />
-					<textarea ng-model='review.body'></textarea>
-					<br />
-					<br />
-					<label>by:</label>
-					<input ng-model='review.author' type='email' />
-					<br />
-					<br />
-					<input type='submit' value='Submit Review' />
+				<form name='reviewForm' ng-controller='ReviewController as reviewCtrl' ng-submit='reviewForm.$valid && reviewCtrl.addReview(product)' novalidate>
+					<blockquote>
+						<br />
+						<b>Stars: {{reviewCtrl.review.stars}}</b>
+						<br />
+						{{reviewCtrl.review.body}}
+						<br />
+						<cite>by: {{reviewCtrl.review.author}} on {{reviewCtrl.review.createdOn | date:'MM/dd/yyyy @ h:mma'}}</cite>
+					</blockquote>
+					<h4>- Add a Review -</h4>
+						<select ng-model='reviewCtrl.review.stars' required>
+							<option value='1'>1 star</option>
+							<option value='2'>2 stars</option>
+							<option value='3'>3 stars</option>
+							<option value='4'>4 stars</option>
+							<option value='5'>5 stars</option>
+						</select>
+						<br />
+						<br />
+						<textarea ng-model='reviewCtrl.review.body' required></textarea>
+						<br />
+						<br />
+						<label>by:</label>
+						<input name='author' ng-model='reviewCtrl.review.author' type='email' required class='ng-pristine ng-invalid' />
+						<!-- 'valid' is a built-in property in Angular -->
+						<div>reviewForm is {{reviewForm.$valid}}</div>
+						<br />
+						<br />
+						<input type='submit' value='Submit Review' />
 				</form>
 			</div>
 		</section>
