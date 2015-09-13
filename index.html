@@ -36,7 +36,33 @@
 			</div>
 			<div class='panel' ng-show='panel.isSelected(3)'>
 				<h4>Revs</h4>
-				<blockquote>None yet</blockquote>
+				<blockquote ng-repeat='review in product.reviews'>
+					<b>Stars: {{review.stars}}</b>
+					<br />
+					{{review.body}}
+					<br />
+					<cite>by: {{review.author}}</cite>
+				</blockquote>
+				<form name='reviewForm'>
+				<h4>- Add a Review -</h4>
+					<select>
+						<option value='1'>1 star</option>
+						<option value='2'>2 stars</option>
+						<option value='3'>3 stars</option>
+						<option value='4'>4 stars</option>
+						<option value='5'>5 stars</option>
+					</select>
+					<br />
+					<br />
+					<textarea></textarea>
+					<br />
+					<br />
+					<label>by:</label>
+					<input type='email' />
+					<br />
+					<br />
+					<input type='submit' value='Submit Review' />
+				</form>
 			</div>
 		</section>
 		<!-- ng-show will only show the elem. (canPurchase) if the value of the expression is true -->
