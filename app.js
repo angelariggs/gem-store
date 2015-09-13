@@ -2,6 +2,18 @@
 	// 'store' = application name; [] are where dependencies will go.
 	var app = angular.module('gemStore',[]);
 	
+	app.controller('GalleryController', function(){
+	  	this.current = 0;
+	    
+	    this.setCurrent = function(currImg){
+	      if (currImg) {
+	        this.current = currImg;
+	      } else {
+	      	this.current = 0;
+	      }
+	    };
+	  });
+	
 	//name of controller is Cap Case and always uses name Controller
 	app.controller('StoreController', function(){
 		this.products = gems;
