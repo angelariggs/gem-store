@@ -42,6 +42,9 @@
 ##ng-init
 - allows you to evaluate an expression in the currents scope
 
+##ng-model
+- binds the form elements value to the property
+
 ---
 
 ##Filters
