@@ -17,11 +17,20 @@
 
 ## Custom Directives:
 ### Template-expanding directive is the simplest kind
-- they define a custom tag or attribute that is expanded or replaced
-- can include Controller logic, if needed
+- They define a custom tag or attribute that is expanded or replaced
+- Can include Controller logic, if needed
 - Can also express complex UI
 - Call events and register event handlers
 - Reuse common components
+- A dash in HTML translates to CamelCase in JavaScript
+	- ex: product-title in HTML becomes productTitle in JS
+
+## Attributes vs Element Directives
+- Element directive: <product-title></product-title>
+	- Use element directives for UI
+- Attribute directive: <h3 product-title></h3>
+	- Use attribute directives for adding behaviors to HTML
+- Use open and closing tags; self-closing tags aren't best practice
 
 ---
 #Directives

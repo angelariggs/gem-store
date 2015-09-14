@@ -1,0 +1,24 @@
+{
+  "name": "gem-store",
+  "version": "1.0.0",
+  "description": "Using CodeSchool's Angular course to create a gem store!",
+  "main": "app.js",
+  "dependencies": {
+    "angular": "^1.4.5",
+    "bootstrap": "^3.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelariggs/gem-store.git"
+  },
+  "author": "angela riggs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelariggs/gem-store/issues"
+  },
+  "homepage": "https://github.com/angelariggs/gem-store#readme"
+}
