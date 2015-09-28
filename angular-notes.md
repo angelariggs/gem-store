@@ -15,6 +15,13 @@
 ##Modules:
 - Where the application components live
 
+##Dependency Injection:
+- How we define the services (e.g. $http or $log) that our controller needs
+- ex 1: app.controller('SomeController', ['$http', function($http){	
+} ]);
+- ex 2: app.controller('SomeController', ['$http', '$log', function($http, $log){	
+} ]);
+
 ## Custom Directives:
 ### Template-expanding directive is the simplest kind
 - They define a custom tag or attribute that is expanded or replaced

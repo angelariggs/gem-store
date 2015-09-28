@@ -1,24 +1,10 @@
 (function(){
   // 'store' = application name; [] are where dependencies will go.
-  var app = angular.module('gemStore',[]);
+  var app = angular.module('gemStore',['store-products']);
 
   //name of controller is Cap Case and always uses name Controller
   app.controller('StoreController', function(){
     this.products = gems;
-  });
-
-  app.controller('PanelController', function(){
-    // this takes the place of "ng-init='tab=1'" in the HTML
-    this.tab = 1;
-
-    // this takes the place of the ng-click in HTML
-    this.selectTab = function(setTab){
-      this.tab = setTab;
-    };
-
-    this.isSelected = function(checkTab){
-      return this.tab === checkTab;
-    };
   });
 
   app.controller('GalleryController', function(){
@@ -40,20 +26,6 @@
       this.review.createdOn = Date.now();
       product.reviews.push(this.review);
       this.review = {};
-    };
-  });
-
-  // app.directive("productTitle", function(){
-  //   return {
-  //     restrict: "E",
-  //     templateUrl: "product-title.html"
-  //   };
-  // });
-
-  app.directive("productDescription", function(){
-    return{
-      restrict: "E",
-      templateUrl: "product-description.html"
     };
   });
 
